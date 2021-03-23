@@ -1,0 +1,51 @@
+.search_card{
+  margin: 15px;
+}
+
+
+.rendu {
+  color:green;
+  border: 1px solid green;
+  padding:2px;
+}
+
+.nonRendu {
+  color:red;
+  border: 1px solid red;
+  padding:2px;
+  background-color:yellow;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+}
+
+.ajouterBtn {
+  align-self: flex-end;
+}
+
+/* #infinite-scroll{
+  height:500px;
+} */
+
+.infinite_scroll{
+  height: 93%;
+  /* height:calc(100vh - 65px); */
+}
+mat-card-content{
+  height: 100%;
+}
+.assignment_container{
+  display: flex;
+}
+
+.assignment_flex{
+  flex:auto;
+  margin: 15px;
+  height:calc(85vh - 20px);
+}
+
+.list_nonrendu{
+  text-decoration: none;
+}

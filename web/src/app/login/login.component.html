@@ -1,0 +1,37 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>account_circle</mat-icon>
+</button>
+<mat-menu #menu="matMenu" style="padding:0px">
+    <form>
+        <div class="menu_login" (click)="$event.stopPropagation()" *ngIf="!authService.loggedIn; else loggedView">
+            <h2 style="margin: 5px 0">Connexion</h2>
+            <mat-form-field style="width: 100%;">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" name="usernameInput" [(ngModel)]="user.username">
+                <button mat-button *ngIf="user.username" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="user.username=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;" (click)="$event.stopPropagation()">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="usernamePassword" [(ngModel)]="user.password">
+                <button mat-button *ngIf="user.password" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="user.password=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="dropdown-divider"></div>
+            <button mat-raised-button (click)="login()">Connexion</button>
+
+        </div>
+        <ng-template #loggedView>
+            <div class="menu_login" (click)="$event.stopPropagation()">
+                <h2 style="margin: 5px 0">Vous êtes connecté</h2>
+                <button mat-raised-button (click)="logout()">Déconnexion</button>
+            </div>
+        </ng-template>
+    </form>
+
+    <p style="margin: 10px; font-weight: 200; font-style: italic;">Tab ne fonctionne pas pour passer d'un input à l'autre</p>
+</mat-menu>

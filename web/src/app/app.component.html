@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <a [routerLink]="'/'" class="home_assignment">Assignments App</a>
+  <span class="example-spacer"></span>
+  <button title="Voir les enseignements" mat-icon-button [routerLink]="'subjects'">
+    <mat-icon>import_contacts</mat-icon>
+  </button>
+  <button title="Créer un devoir" mat-icon-button [routerLink]="'/add'">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+  <app-login title="Se connecter"></app-login>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  assignment-server:
+    build: ./api
+    container_name: demo-assignment-server
+    ports:
+      - 2000:2000
+
+  assignment-client:
+    build: ./web
+    container_name: demo-assignment-client
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - assignment-server
+      - assignment-client
+
+networks:
+  default:
