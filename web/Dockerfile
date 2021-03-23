@@ -1,15 +1,14 @@
-FROM node:12.16.1-alpine As builder
+FROM node:lts-alpine AS build
 
-WORKDIR /yoni/projetBuffa_assignments/web/src/app
+WORKDIR usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-RUN npm run build --prod
+RUN npm run build
 
-FROM nginx:1.15.8-alpine
-
-COPY --from=builder /yoni/projetBuffa_assignments/web/src/app/dist/assignment-app/ /usr/share/nginx/html
+EXPOSE 3000
+CMD ["node", "server.js"]
