@@ -1,0 +1,12 @@
+.custom_navbar{
+    background:white!important;
+    color: #ff6e14;
+    box-shadow: 10px 5px gray;
+    box-shadow: -3px 1px 9px grey;
+
+}
+.custom_titre{
+    font-weight: bold;
+    color: #ff6e14;
+    font-size: 29px;
+}

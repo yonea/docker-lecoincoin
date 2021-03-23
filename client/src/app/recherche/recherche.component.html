@@ -1,0 +1,13 @@
+<div class="card custom_card">
+    <div class="card-body">
+        <h5 class="card-title">Faites votre recherche</h5>
+
+        <div class="form-group">
+            <input type="text" class="form-control custom_recherche" id="textRecherche" placeholder="Rechercher ..." (keyup.enter)="doRecherche()" [(ngModel)]="textRecherche">
+        </div>
+        <div style="width: 100%; text-align: center;">
+            <button type="submit" class="btn btn-primary" style="background: #ff6e14;
+            border: 0px solid black;" (click)="doRecherche()">Rechercher</button>
+        </div>
+    </div>
+</div>
